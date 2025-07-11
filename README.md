@@ -19,7 +19,7 @@ This repository demonstrates a growing mastery of Haskell through hands-on proje
 ## 🛠️ Tech Stack
 
 - **Language:** Haskell
-- **Tools:** GHC, Stack (optional), VSCode with Haskell plugins
+- **Tools:** GHC, VSCode with Haskell plugins
 - **Concepts:** Functional programming, recursion, pattern matching, IO monad, type inference
 
 ---
