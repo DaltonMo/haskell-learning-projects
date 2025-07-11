@@ -27,7 +27,7 @@ This project showcases foundational Haskell skills that are valuable to employer
 
 ```bash
 # Compile
-ghc unit-converter.hs -o unit-converter
+ghc main.hs -o unit-converter
 
 # Run
 ./unit-converter
