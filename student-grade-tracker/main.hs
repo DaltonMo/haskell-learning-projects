@@ -1,6 +1,5 @@
 import Text.Printf
-import Data.List
-import Data.Ord
+
 
 data Student = Student
   { name    :: String
@@ -21,11 +20,17 @@ sumList (x:xs) = x + sumList xs -- List is deconstructing from [] -> x (head) an
 average :: Student -> Double
 average student = sumList (grades student) / fromIntegral(length (grades student))
 
+-- Example of using maximumBy and comparing
+topStudent :: [Student] -> Student
+topStudent = maximumBy (comparing average) 
+-- same as // partial function application
+-- topStudent students = maximumBy (comparing average) students
+
 main :: IO()
 main = do
-  let student1 = Student "Dalton" [95.0, 88.5, 92.3]
-  
-  let result = average student1
 
-  printf "The average of %s is %.2f\n" (name student1) result
+
+  printf "Student: %s\nAverage: %.2f\n" (name (students !! 0)) (average (students !! 0))
+  printf "Student: %s\nAverage: %.2f\n" (name (students !! 1)) (average (students !! 1))
+  printf "Student: %s\nAverage: %.2f\n" (name (students !! 2)) (average (students !! 2))
 
