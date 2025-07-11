@@ -1,24 +1,31 @@
+import Text.Printf
+import Data.List
+import Data.Ord
+
 data Student = Student
   { name    :: String
   , grades  :: [Double]
   }
 
+students :: [Student]
+students = 
+  [ Student "Alice" [90.0, 85.5, 78.0]
+  , Student "Bob"   [88.0, 92.0, 80.5]
+  , Student "Dalton" [100.0, 95.0, 98.5]
+  ]
+
 sumList :: [Double] -> Double
 sumList [] = 0 -- If sumList is empty return 0 // stops recursion
 sumList (x:xs) = x + sumList xs -- List is deconstructing from [] -> x (head) and xs (tail, remaining list)
 
-averageList :: Double -> Int -> Double
-averageList x y = x / fromIntegral y
-
+average :: Student -> Double
+average student = sumList (grades student) / fromIntegral(length (grades student))
 
 main :: IO()
 main = do
   let student1 = Student "Dalton" [95.0, 88.5, 92.3]
   
-  let sumOfGrades = sumList (grades student1)
-  let averageOfGrades = averageList sumOfGrades (length (grades student1))
+  let result = average student1
 
-  print (name student1)
-  print sumOfGrades
-  print averageOfGrades
+  printf "The average of %s is %.2f\n" (name student1) result
 
