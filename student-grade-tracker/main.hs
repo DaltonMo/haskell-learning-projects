@@ -1,6 +1,6 @@
 import Text.Printf
-import Data.List
-import Data.Ord
+--import Data.List
+--import Data.Ord
 
 data Student = Student
   { name    :: String
@@ -21,9 +21,20 @@ sumList (x:xs) = x + sumList xs -- List is deconstructing from [] -> x (head) an
 average :: Student -> Double
 average student = sumList (grades student) / fromIntegral(length (grades student))
 
--- Example of using maximumBy and comparing
 topStudent :: [Student] -> Student
-topStudent = maximumBy (comparing average) 
+topStudent [] = error "No students provided"
+topStudent (x:xs) = topStudentHelper x xs
+
+topStudentHelper :: Student -> [Student] -> Student
+topStudentHelper best [] = best -- if list is empty, best student found
+topStudentHelper best (x:xs)
+  | average x > average best  = topStudentHelper x xs -- x becomes the new best
+  | otherwise                 = topStudentHelper best xs
+
+
+-- Example of using maximumBy and comparing
+--topStudent :: [Student] -> Student
+--topStudent = maximumBy (comparing average) 
 -- same as // partial function application
 -- topStudent students = maximumBy (comparing average) students
 
