@@ -29,7 +29,12 @@ This repository demonstrates a growing mastery of Haskell through hands-on proje
 ### ✅ `unit-converter`
 
 A terminal-based program that converts between various units (inches/cm, lbs/kg, Fahrenheit/Celsius). Focuses on arithmetic logic, IO, and `case` expressions.  
-➡️ [View Project](./unit-converter.hs)
+➡️ [View Project](./unit-converter)
+
+### ✅ `student-grade-tracker`
+
+Analyzes a list of students and their grades to determine the top performer. Demonstrates recursive list processing, data types, and custom logic for average calculation.  
+➡️ [View Project](./student-grade-tracker)
 
 ---
 
