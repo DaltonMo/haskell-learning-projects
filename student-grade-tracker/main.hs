@@ -1,5 +1,6 @@
 import Text.Printf
-
+import Data.List
+import Data.Ord
 
 data Student = Student
   { name    :: String
@@ -28,9 +29,6 @@ topStudent = maximumBy (comparing average)
 
 main :: IO()
 main = do
-
-
-  printf "Student: %s\nAverage: %.2f\n" (name (students !! 0)) (average (students !! 0))
-  printf "Student: %s\nAverage: %.2f\n" (name (students !! 1)) (average (students !! 1))
-  printf "Student: %s\nAverage: %.2f\n" (name (students !! 2)) (average (students !! 2))
+  let topStud = topStudent students
+  printf "The top student of the class is %s with an average of %.2f%%.\n" (name topStud) (average topStud)
 
