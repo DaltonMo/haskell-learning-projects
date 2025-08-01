@@ -36,6 +36,11 @@ A terminal-based program that converts between various units (inches/cm, lbs/kg,
 Analyzes a list of students and their grades to determine the top performer. Demonstrates recursive list processing, data types, and custom logic for average calculation.  
 ➡️ [View Project](./student-grade-tracker)
 
+### ✅ `todo-list-app`
+
+Manages a list of tasks with features to add, complete, and remove items. Demonstrates custom data types, pure list transformations, and basic IO for task tracking and display.  
+➡️ [View Project](./todo-list-app)
+
 ---
 
 ## 🚀 How to Run Projects
